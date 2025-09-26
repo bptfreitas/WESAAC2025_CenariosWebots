@@ -1,4 +1,4 @@
-#VRML_SIM R2023b utf8
+#VRML_SIM R2025a utf8
 
 EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/backgrounds/protos/TexturedBackground.proto"
 EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/backgrounds/protos/TexturedBackgroundLight.proto"
@@ -6,23 +6,21 @@ EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/project
 
 WorldInfo {
   basicTimeStep 16
-  gpsCoordinateSystem "local"
-  gpsReference 0 0 0
 }
 Viewpoint {
   orientation 0.2601593616689325 -0.35568075742214544 -0.8976682601805761 4.990345913735541
-  position -0.6879497470833533 -1.262768209890189 1.0699731419971281
+  position -1.48477873463312 -3.2235925814921416 2.3298270120696136
 }
 TexturedBackground {
 }
 TexturedBackgroundLight {
 }
 Floor {
-  translation 1.5 0.5 0
-  size 3 2
+  translation 1 1 0
+  size 2 3
 }
 DEF WALL_1 Solid {
-  translation 0.0 0 0.05
+  translation 0 0 0.05
   children [
     DEF WALL_SHAPE Shape {
       appearance PBRAppearance {
@@ -38,7 +36,7 @@ DEF WALL_1 Solid {
   boundingObject USE WALL_SHAPE
 }
 DEF WALL_2 Solid {
-  translation 0.0 1 0.05
+  translation 0 1 0.05
   children [
     USE WALL_SHAPE
   ]
@@ -46,8 +44,7 @@ DEF WALL_2 Solid {
   boundingObject USE WALL_SHAPE
 }
 DEF WALL_3 Solid {
-  translation 0.5 -0.5 0.05
-  rotation 0 0 1 1.5708
+  translation 0 2 0.05
   children [
     USE WALL_SHAPE
   ]
@@ -55,7 +52,7 @@ DEF WALL_3 Solid {
   boundingObject USE WALL_SHAPE
 }
 DEF WALL_4 Solid {
-  translation 0.5 1.5 0.05
+  translation 0.5 -0.5 0.05
   rotation 0 0 1 1.5708
   children [
     USE WALL_SHAPE
@@ -64,7 +61,8 @@ DEF WALL_4 Solid {
   boundingObject USE WALL_SHAPE
 }
 DEF WALL_5 Solid {
-  translation 1.0 0 0.05
+  translation 0.5 2.5 0.05
+  rotation 0 0 1 1.5708
   children [
     USE WALL_SHAPE
   ]
@@ -72,8 +70,7 @@ DEF WALL_5 Solid {
   boundingObject USE WALL_SHAPE
 }
 DEF WALL_6 Solid {
-  translation 1.5 -0.5 0.05
-  rotation 0 0 1 1.5708
+  translation 1 0 0.05
   children [
     USE WALL_SHAPE
   ]
@@ -81,8 +78,7 @@ DEF WALL_6 Solid {
   boundingObject USE WALL_SHAPE
 }
 DEF WALL_7 Solid {
-  translation 1.5 1.5 0.05
-  rotation 0 0 1 1.5708
+  translation 1 1 0.05
   children [
     USE WALL_SHAPE
   ]
@@ -90,7 +86,8 @@ DEF WALL_7 Solid {
   boundingObject USE WALL_SHAPE
 }
 DEF WALL_8 Solid {
-  translation 2.0 1 0.05
+  translation 1.5 -0.5 0.05
+  rotation 0 0 1 1.5708
   children [
     USE WALL_SHAPE
   ]
@@ -98,7 +95,7 @@ DEF WALL_8 Solid {
   boundingObject USE WALL_SHAPE
 }
 DEF WALL_9 Solid {
-  translation 2.5 -0.5 0.05
+  translation 1.5 2.5 0.05
   rotation 0 0 1 1.5708
   children [
     USE WALL_SHAPE
@@ -107,8 +104,7 @@ DEF WALL_9 Solid {
   boundingObject USE WALL_SHAPE
 }
 DEF WALL_10 Solid {
-  translation 2.5 1.5 0.05
-  rotation 0 0 1 1.5708
+  translation 2 0 0.05
   children [
     USE WALL_SHAPE
   ]
@@ -116,7 +112,7 @@ DEF WALL_10 Solid {
   boundingObject USE WALL_SHAPE
 }
 DEF WALL_11 Solid {
-  translation 3.0 0 0.05
+  translation 2 1 0.05
   children [
     USE WALL_SHAPE
   ]
@@ -124,7 +120,7 @@ DEF WALL_11 Solid {
   boundingObject USE WALL_SHAPE
 }
 DEF WALL_12 Solid {
-  translation 3.0 1 0.05
+  translation 2 2 0.05
   children [
     USE WALL_SHAPE
   ]
@@ -132,11 +128,11 @@ DEF WALL_12 Solid {
   boundingObject USE WALL_SHAPE
 }
 DEF CYLINDER Pose {
-  translation 2.5 1 0.2
+  translation 1.5 0 0.2
   children [
     Shape {
       appearance PBRAppearance {
-        baseColor 0.5 0.0 0.0
+        baseColor 0.5 0 0
         roughness 0.2
         metalness 0
       }
@@ -147,9 +143,8 @@ DEF CYLINDER Pose {
     }
   ]
 }
-
 DEF CONE Pose {
-  translation 2.5 1 0.4
+  translation 1.5 0 0.4
   children [
     Shape {
       appearance PBRAppearance {
@@ -164,9 +159,10 @@ DEF CONE Pose {
       }
     }
   ]
-}Robot {
-  translation 0.5 0 0.04
-  rotation 0 0 1 0
+}
+Robot {
+  translation 0.49999999339568557 -2.2061356291064713e-08 0.03986048964923723
+  rotation -8.73256769452922e-09 -8.73260370802431e-09 1 1.570799999999498
   children [
     DEF BODY Shape {
       appearance PBRAppearance {
@@ -180,7 +176,7 @@ DEF CONE Pose {
     }
     DEF WHEEL1 HingeJoint {
       jointParameters HingeJointParameters {
-        position 707.9180850044814
+        position 707.9180850044874
         axis 0 1 0
         anchor 0.05 0.06 0
       }
@@ -191,7 +187,7 @@ DEF CONE Pose {
       ]
       endPoint Solid {
         translation 0.05 0.06 0
-        rotation -0.38265870547582737 0.653287524669414 -0.6532899243328905 3.8725265764890144
+        rotation -0.3826587054780406 0.6532875246687675 -0.6532899243322405 3.8725265764928767
         children [
           DEF WHEEL Shape {
             appearance PBRAppearance {
@@ -209,8 +205,8 @@ DEF CONE Pose {
         boundingObject USE WHEEL
         physics Physics {
         }
-        linearVelocity 0.031142253568670474 -0.005358023217073638 -4.0077940473581927e-10
-        angularVelocity -0.49973294323240036 0.86618336296342 -0.40487688788439097
+        linearVelocity 3.615956098925274e-14 3.297978485079991e-13 7.421278215326931e-16
+        angularVelocity -9.079779666473366e-12 -6.318467613033572e-15 -1.7230126850397995e-12
       }
     }
     DEF WHEEL2 HingeJoint {
@@ -226,7 +222,7 @@ DEF CONE Pose {
       ]
       endPoint Solid {
         translation 0.05 -0.06 0
-        rotation -0.9293807046791979 0.26100862561443383 -0.2610095843544104 4.639213874991992
+        rotation -0.9293807046791976 0.2610086256144346 -0.26100958435441024 4.639213874991992
         children [
           USE WHEEL
         ]
@@ -234,13 +230,13 @@ DEF CONE Pose {
         boundingObject USE WHEEL
         physics Physics {
         }
-        linearVelocity -0.010918160011587323 -0.029626934219898978 1.6106052633458317e-09
-        angularVelocity 0.4997335297872788 -0.866184341771765 -0.40487704958653226
+        linearVelocity 3.694188080830006e-14 3.2959413519001905e-14 4.947539453131117e-16
+        angularVelocity 1.0265150608653368e-14 3.822733536134286e-15 -1.7220674436345123e-12
       }
     }
     DEF WHEEL3 HingeJoint {
       jointParameters HingeJointParameters {
-        position 707.9181083649992
+        position 707.9181083650051
         axis 0 1 0
         anchor -0.05 0.06 0
       }
@@ -251,7 +247,7 @@ DEF CONE Pose {
       ]
       endPoint Solid {
         translation -0.05 0.06 0
-        rotation -0.3826674534018618 0.6532849626255537 -0.6532873622796195 3.872541837593892
+        rotation -0.3826674534040752 0.6532849626249059 -0.6532873622789709 3.8725418375977556
         children [
           USE WHEEL
         ]
@@ -259,8 +255,8 @@ DEF CONE Pose {
         boundingObject USE WHEEL
         physics Physics {
         }
-        linearVelocity 0.010918135336110515 0.02969226815892613 -2.6729026970717866e-10
-        angularVelocity -0.49973356074077346 0.8661843270490921 -0.40487708448221454
+        linearVelocity -3.637501693444746e-14 3.2979357755164115e-13 -6.361108797151238e-16
+        angularVelocity -9.07962743973732e-12 5.2835265547311845e-17 -1.7218703875453336e-12
       }
     }
     DEF WHEEL4 HingeJoint {
@@ -276,7 +272,7 @@ DEF CONE Pose {
       ]
       endPoint Solid {
         translation -0.05 -0.06 0
-        rotation -0.9293863427189943 0.2609985876649338 -0.2609995463680387 4.639219925188624
+        rotation -0.929386342718994 0.2609985876649344 -0.2609995463680387 4.639219925188628
         children [
           USE WHEEL
         ]
@@ -284,16 +280,12 @@ DEF CONE Pose {
         boundingObject USE WHEEL
         physics Physics {
         }
-        linearVelocity -0.031142278328587302 0.005423357241550668 1.7440912229562678e-09
-        angularVelocity 0.49973291227226746 -0.8661833776716349 -0.404876852994763
+        linearVelocity -3.7131497461363386e-14 3.296283191020568e-14 -7.77467491814887e-16
+        angularVelocity 1.0191585314515379e-14 -8.919873016050272e-15 -1.7241417092776607e-12
       }
     }
     DEF DS_RIGHT DistanceSensor {
       translation 0.1 -0.03 0
-      rotation 0 0 1 0
-      type "sonar"
-	  lookupTable [ 0     0  0,
-      		        4     400  0  ]          
       children [
         Shape {
           appearance PBRAppearance {
@@ -307,13 +299,14 @@ DEF CONE Pose {
         }
       ]
       name "ds_right"
+      lookupTable [
+        0 0 0
+        4 400 0
+      ]
+      type "sonar"
     }
     DEF DS_LEFT DistanceSensor {
       translation 0.1 0.03 0
-      rotation 0 0 1 0
-      type "sonar"
-	  lookupTable [ 0     0  0,
-      		        4     400  0  ]
       children [
         Shape {
           appearance PBRAppearance {
@@ -327,23 +320,22 @@ DEF CONE Pose {
         }
       ]
       name "ds_left"
+      lookupTable [
+        0 0 0
+        4 400 0
+      ]
+      type "sonar"
     }
-    
     DEF ROBOT_GPS GPS {
-      translation 0 0 0
-      rotation 0 0 0 0
-      type "satellite"	  
       name "robot_gps"
     }
-          
   ]
   boundingObject USE BODY
   physics Physics {
     density -1
     mass 1
   }
-  
-  controller "four_wheels_collision_avoidance"
-  linearVelocity -1.2357996662340804e-08 3.2666991917217575e-05 6.716570263854338e-10
-  angularVelocity -1.546824500160252e-08 -7.346856544163671e-09 -0.40462983497951677
+  controller "four_wheels_collision_avoidance"  
+  linearVelocity -7.950333166102637e-16 1.8135008192189578e-13 -2.842170943040401e-17
+  angularVelocity 1.3291326821218412e-14 -1.2790940966441428e-15 -1.7252140485392586e-12
 }
