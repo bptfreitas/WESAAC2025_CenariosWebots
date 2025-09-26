@@ -18,8 +18,8 @@ TexturedBackground {
 TexturedBackgroundLight {
 }
 Floor {
-  translation 0.5 0.0 0
-  size 1 1
+  translation 1.5 0.5 0
+  size 3 2
 }
 DEF WALL_1 Solid {
   translation 0.0 0 0.05
@@ -38,8 +38,7 @@ DEF WALL_1 Solid {
   boundingObject USE WALL_SHAPE
 }
 DEF WALL_2 Solid {
-  translation 0.5 -0.5 0.05
-  rotation 0 0 1 1.5708
+  translation 0.0 1 0.05
   children [
     USE WALL_SHAPE
   ]
@@ -47,7 +46,7 @@ DEF WALL_2 Solid {
   boundingObject USE WALL_SHAPE
 }
 DEF WALL_3 Solid {
-  translation 0.5 0.5 0.05
+  translation 0.5 -0.5 0.05
   rotation 0 0 1 1.5708
   children [
     USE WALL_SHAPE
@@ -56,14 +55,116 @@ DEF WALL_3 Solid {
   boundingObject USE WALL_SHAPE
 }
 DEF WALL_4 Solid {
-  translation 1.0 0 0.05
+  translation 0.5 1.5 0.05
+  rotation 0 0 1 1.5708
   children [
     USE WALL_SHAPE
   ]
   name "solid(4)"
   boundingObject USE WALL_SHAPE
 }
-Robot {
+DEF WALL_5 Solid {
+  translation 1.0 0 0.05
+  children [
+    USE WALL_SHAPE
+  ]
+  name "solid(5)"
+  boundingObject USE WALL_SHAPE
+}
+DEF WALL_6 Solid {
+  translation 1.5 -0.5 0.05
+  rotation 0 0 1 1.5708
+  children [
+    USE WALL_SHAPE
+  ]
+  name "solid(6)"
+  boundingObject USE WALL_SHAPE
+}
+DEF WALL_7 Solid {
+  translation 1.5 1.5 0.05
+  rotation 0 0 1 1.5708
+  children [
+    USE WALL_SHAPE
+  ]
+  name "solid(7)"
+  boundingObject USE WALL_SHAPE
+}
+DEF WALL_8 Solid {
+  translation 2.0 1 0.05
+  children [
+    USE WALL_SHAPE
+  ]
+  name "solid(8)"
+  boundingObject USE WALL_SHAPE
+}
+DEF WALL_9 Solid {
+  translation 2.5 -0.5 0.05
+  rotation 0 0 1 1.5708
+  children [
+    USE WALL_SHAPE
+  ]
+  name "solid(9)"
+  boundingObject USE WALL_SHAPE
+}
+DEF WALL_10 Solid {
+  translation 2.5 1.5 0.05
+  rotation 0 0 1 1.5708
+  children [
+    USE WALL_SHAPE
+  ]
+  name "solid(10)"
+  boundingObject USE WALL_SHAPE
+}
+DEF WALL_11 Solid {
+  translation 3.0 0 0.05
+  children [
+    USE WALL_SHAPE
+  ]
+  name "solid(11)"
+  boundingObject USE WALL_SHAPE
+}
+DEF WALL_12 Solid {
+  translation 3.0 1 0.05
+  children [
+    USE WALL_SHAPE
+  ]
+  name "solid(12)"
+  boundingObject USE WALL_SHAPE
+}
+DEF CYLINDER Pose {
+  translation 2.5 1 0.2
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 0.5 0.0 0.0
+        roughness 0.2
+        metalness 0
+      }
+      geometry Cylinder {
+        height 0.4
+        radius 0.1
+      }
+    }
+  ]
+}
+
+DEF CONE Pose {
+  translation 2.5 1 0.4
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 0.5 0 0
+        roughness 0.2
+        metalness 0
+      }
+      geometry Cone {
+        bottomRadius 0.2
+        height 0.2
+        subdivision 36
+      }
+    }
+  ]
+}Robot {
   translation 0.5 0 0.04
   rotation 0 0 1 0
   children [
